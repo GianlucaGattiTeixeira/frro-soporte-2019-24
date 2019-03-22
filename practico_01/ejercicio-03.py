@@ -5,4 +5,5 @@
 
 
 def operacion(a, b, multiplicar):
+    a
     pass
