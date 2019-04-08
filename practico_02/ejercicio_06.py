@@ -3,7 +3,6 @@
 # persona (entero).
 # Para obtener la fecha actual, usar el método de clase "now" de la clase datetime (ya importada).
 
-
 class Persona:
 
     # nacimiento es un objeto datetime.datetime
