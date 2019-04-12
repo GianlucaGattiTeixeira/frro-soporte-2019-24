@@ -39,4 +39,5 @@ class Persona:
 
 
 pers = Persona('Lucas',21,'H',80,176)
-pers.print_data()
+assert pers.es_mayor_edad() == True
+assert len(pers.dni) == 8

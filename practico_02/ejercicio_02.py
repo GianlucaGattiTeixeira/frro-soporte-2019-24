@@ -16,5 +16,6 @@ class Circulo:
 
 
 circ = Circulo(5)
-print(circ.area())
-print(circ.perimetro())
+
+assert circ.area() == (5**2)*(pi**2)
+assert circ.perimetro() == 10*pi
