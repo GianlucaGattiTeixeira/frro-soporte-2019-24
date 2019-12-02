@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>listar productos no subidos</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/product/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+  <div style="margin-left: 100px;" >
+  <h1 >Información de producto</h1><br>
+  <div class="media position-relative">
+      <div class="media-body">
+          <h5>{{bebida.titulo_bebida}}</h5>
+          <p><font face="Calibri" color="Black"> Stock disponible = {{bebida.stock}}</font></p>
+          <p><font face="Calibri" color="Black"> Precio = {{bebida.precio}}</font></p>
+
+      </div>
+  </div>
+      </div>
+  <form action="/admin/publicar_producto/{{bebida.id_bebida}}">
+              <button type="submit" class="btn btn-outline-primary btn-block" >Subir Producto</button>
+          </form>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% from "_render_elements.html" import render_vinos %}
+
+{% block content %}
+<h1>Bar</h1>
+
+<nav class="barra">
+    <a href="{{url_for('get_bebidas',tipo_bebida='vino') }}">Vinos</a>
+
+    <a href="{{url_for('get_bebidas',tipo_bebida='espumante') }}">Espumantes</a>
+
+    <a href="{{url_for('get_bebidas',tipo_bebida='cerveza') }}">Cervezas</a>
+    <div class="animation"></div>
+</nav>
+<br>
+<br>
+{% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for category,message in messages %}
+            <p class="{{category}}">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<div class="container" style="background-color: #2c3e50;">
+    <div class="row">
+
+            {% for i in rango -%}
+                {{
+                render_vinos(datos[0][i].id_bebida,datos[0][i].titulo_bebida,datos[0][i].precio,datos[1][i])
+                }}
+
+            {%- endfor %}
+
+    </div>
+
+</div>
+
+<script src="../static/js/jquery-3.3.1.slim.min.js"></script>
+<script src="../static/js/popper.js/1.14.7/umd/popper.min.js" ></script>
+<script src="../static/js/bootstrap.min.js"></script>
+{% endblock %}
+

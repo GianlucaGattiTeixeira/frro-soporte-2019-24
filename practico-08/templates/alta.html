@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Alta producto</title>
+{% endblock %}
+
+{% block content %}
+
+<h1>ALTA PRODUCTO</h1>
+<hr color="white">
+<div align="center" style="margin-left: 550px; margin-top: 100px;">
+    <div align="left">
+        <form method="post" action="{{ url_for('alta_producto') }}">
+
+            <label class="texto_editar">Nombre: </label> <input type="text" name="nombre" class="campo"><<br><br>
+            <label class="texto_editar">Precio: </label> <input type="text" name="precio" class="campo"><br><br>
+            <label class="texto_editar">Stock: </label> <input type="text" name="stock" class="campo"><br><br>
+            <label class="texto_editar">Tipo de bebida: </label> <input type="text" name="tipo" list="tipo" class="campo">
+            <datalist id="tipo">
+                <option value="vino">
+                <option value="espumante">
+                <option value="cerveza">
+            </datalist><br><br>
+            <button class="boton4">Confirmar</button>
+            <input type="button" class="boton4" value="Volver" onclick="location.href='{{url_for('admin')}}'">
+        </form>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category,message in messages %}
+                <p class="{{category}}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+</div>
+{% endblock %}

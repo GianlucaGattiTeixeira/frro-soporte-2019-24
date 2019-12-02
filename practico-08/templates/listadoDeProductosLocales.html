@@ -1,0 +1,30 @@
+{% extends "admin.html" %}
+{% from "_render_elements.html" import render_admin_bebidas %}
+
+{% block content -%}
+<nav class="barra">
+    <a href="{{url_for('admin_bebidas',tipo_bebida='vino') }}">Vinos</a>
+
+    <a href="{{url_for('admin_bebidas',tipo_bebida='espumante') }}">Espumantes</a>
+
+    <a href="{{url_for('admin_bebidas',tipo_bebida='cerveza') }}">Cervezas</a>
+    <div class="animation"></div>
+</nav>
+<br>
+<br>
+<div class="container" style="background-color: #2c3e50;">
+    <div class="row">
+
+        {% for i in rango -%}
+
+        {{
+        render_admin_bebidas(datos[0][i].id_bebida,datos[0][i].titulo_bebida,datos[0][i].precio,datos[0][i].stock,datos[1][i])
+        }}
+
+        {%- endfor %}
+
+    </div>
+
+</div>
+
+{%- endblock %}

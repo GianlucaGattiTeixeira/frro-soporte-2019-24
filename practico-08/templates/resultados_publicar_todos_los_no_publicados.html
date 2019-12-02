@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>listar productos no subidos</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/product/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+          <a class="py-2" href="#">
+              </a>
+            <a class="py-3 d-none d-md-inline-block" href="{{url_for('admin') }}">Ver productos en DB Local</a>
+            <a class="py-3 d-none d-md-inline-block" href="{{url_for('alta_producto') }}">Cargar productos a DB local</a>
+            <a class="py-3 d-none d-md-inline-block" href="{{ url_for('listarProductosNoSubidos') }}">Ver productos no subidos</a>
+            <a class="py-3 d-none d-md-inline-block" href="{{ url_for('actualizar') }}">Actualizar productos desde Mercado Libre</a>
+        </div>
+
+
+    </nav>
+    <div class="p-3 mb-2 bg-success text-white text-center">Productos subidos exitosamente</div>
+    <table class="table table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th><font face="Calibri" color="Green">Id     </font></th>
+						<th><font face="Calibri" color="Green">Descripcion  </font></th>
+						<th><font face="Calibri" color="Green">Cantidad     </font></th>
+						<th><font face="Calibri" color="Green">Precio Venta </font></th>
+
+					</tr>
+				</thead>
+                    {% for bebida in exitosos %}
+				<tbody>
+					<tr>
+						<td><font face="Calibri" color="Black">{{ bebida.id_bebida }}    </font></td>
+						<td><font face="Calibri" color="Black">{{ bebida.titulo_bebida }}    </font></td>
+						<td><font face="Calibri" color="Black">{{ bebida.stock }}  </font></td>
+                        <td><font face="Calibri" color="Black">{{ bebida.precio }}    </font></td>
+					</tr>
+                    {% endfor %}
+                </tbody>
+    </table>
+        <div class="p-3 mb-2 bg-danger text-white text-center">Productos para los que ha ocurrido un error y no se han podido subir</div>
+    <table class="table table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th><font face="Calibri" color="Green">Id     </font></th>
+						<th><font face="Calibri" color="Green">Descripcion  </font></th>
+						<th><font face="Calibri" color="Green">Cantidad     </font></th>
+						<th><font face="Calibri" color="Green">Precio Venta </font></th>
+
+					</tr>
+				</thead>
+                    {% for bebida in fallidos %}
+				<tbody>
+					<tr>
+						<td><font face="Calibri" color="Black">{{ bebida.id_bebida }}    </font></td>
+						<td><font face="Calibri" color="Black">{{ bebida.titulo_bebida }}    </font></td>
+						<td><font face="Calibri" color="Black">{{ bebida.stock }}  </font></td>
+                        <td><font face="Calibri" color="Black">{{ bebida.precio }}    </font></td>
+					</tr>
+                    {% endfor %}
+                </tbody>
+    </table>
+
+  </body>

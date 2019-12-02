@@ -1,0 +1,43 @@
+{%- macro render_vinos(id,titulo,precio,imagen=None) -%}
+<div class="col-3" style="padding:10px; background-color: #2c3e50;" align="center">
+    <div style="background-color: white;">
+        <img class="imagen" src={{imagen}}>
+        <label class="texto">{{ titulo }}</label><br>
+        <label class="texto2">${{ precio }}</label><br><br>
+        <label class="texto3">Cantidad:</label><br>
+        <form method="post" action="{{ url_for('compra') }}">
+            <input name="id" value="{{ id }}" type="hidden">
+            <input type=text name="cantidad" list="cantidad" size="4"/>
+            <datalist id="cantidad">
+                <option value="1">
+                <option value="2">
+                <option value="3">
+                <option value="6">
+                <option value="12">
+                <option value="24">
+            </datalist><br><br>
+            <button class="boton4">Comprar</button>
+        </form>
+    </div>
+</div>
+{%- endmacro -%}
+
+{%- macro render_admin_bebidas(id,titulo,precio,stock,imagen=None) -%}
+<div class="col-3" style="padding:10px; background-color: #2c3e50;" align="center">
+    <div style="background-color: white;">
+        <form class="form" id="editar" method="get" action="{{ url_for('editar_producto') }}">
+            <img class="imagen" src={{imagen}}>
+            <label class="texto">{{ titulo }}</label><br>
+            <label class="texto2">${{ precio }}</label><br><br>
+            <label class="texto3">Stock: {{ stock }} unidades</label><br>
+            <input name="id" value="{{ id }}" type="hidden">
+            <button class="boton4">Editar</button>
+        </form>
+        <form id="eliminar" method="post" action="{{ url_for('eliminar_producto') }}">
+            <input name="id" value="{{ id }}" type="hidden">
+            <button class="boton4">Eliminar</button>
+        </form>
+    </div>
+
+</div>
+{%- endmacro -%}

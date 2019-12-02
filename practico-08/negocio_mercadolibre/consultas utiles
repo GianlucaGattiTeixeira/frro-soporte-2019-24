@@ -1,0 +1,2 @@
+OBTENER CODIGOS DE PUBLICACIONES MIAS https://api.mercadolibre.com/users/479319765/items/search?access_token=
+OBTENER INFO DEL ITEM https://api.mercadolibre.com/items?ids=$ITEM_ID&access_token=

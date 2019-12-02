@@ -1,0 +1,6 @@
+access_token = "APP_USR-7996290001363045-112814-ffc067bb4eb6bf9e571463705c190467-479319765"
+client_secret = "11FsdH2nSG0YqelS2eShh8noNSGuDblK"
+client_id = "479319765"
+app_id = "7996290001363045"
+
+

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../static/css/bootstrap/bootstrap.css">
+    <link href="{{ url_for('static', filename='css/mis_estilos.css') }}" rel="stylesheet">
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+<nav class="site-header sticky-top py-1">
+    <div class="container d-flex flex-column flex-md-row justify-content-between barra_admin">
+
+        <a class="py-3 d-none d-md-inline-block" href="{{url_for('admin') }}">Ver productos en DB Local</a>
+        <a class="py-3 d-none d-md-inline-block" href="{{url_for('alta_producto') }}">Cargar productos a DB local</a>
+        <a class="py-3 d-none d-md-inline-block" href="{{ url_for('listarProductosNoSubidos') }}">Ver productos no subidos</a>
+        <a class="py-3 d-none d-md-inline-block" href="{{ url_for('actualizar') }}">Actualizar productos desde Mercado Libre</a>
+
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+</body>

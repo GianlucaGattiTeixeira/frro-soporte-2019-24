@@ -1,0 +1,33 @@
+{% extends "admin.html" %}
+
+{% block content %}
+<br><br><br><br>
+<table class="table table-striped" align="center" style="background-color: white;">
+    <thead>
+    <tr>
+        <th><font face="Calibri" color="Green" size="3">Id     </font></th>
+        <th><font face="Calibri" color="Green" size="3">Descripcion  </font></th>
+        <th><font face="Calibri" color="Green" size="3">Cantidad     </font></th>
+        <th><font face="Calibri" color="Green" size="3">Precio Venta </font></th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td><font face="Calibri" color="Black" size="3">{{bebida.id_bebida}}</font></td>
+        <td><font face="Calibri" color="Black" size="3">{{ bebida.titulo_bebida }}    </font></td>
+        <td><font face="Calibri" color="Black" size="3">{{ bebida.stock }}    </font></td>
+        <td><font face="Calibri" color="Black" size="3">{{ bebida.precio }}  </font></td>
+    </tr>
+
+    </tbody>
+</table>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <div class="p-3 mb-2 bg-info text-white text-left">{{ message }}</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+{% endblock %}

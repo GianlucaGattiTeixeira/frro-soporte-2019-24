@@ -1,0 +1,157 @@
+.barra {
+	margin: 27px auto 0;
+
+	position: relative;
+	width: 340px;
+	height: 50px;
+	background-color: #34495e;
+	border-radius: 8px;
+	font-size: 0;
+}
+.barra a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+.barra .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+.barra a:nth-child(1) {
+	width: 100px;
+}
+.barra a:nth-child(2) {
+	width: 110px;
+}
+.barra a:nth-child(3) {
+	width: 100px;
+}
+
+.barra .start-home, a:nth-child(1):hover~.animation {
+	width: 100px;
+	left: 0;
+	background-color: #1abc9c;
+}
+.barra .start-about, a:nth-child(2):hover~.animation {
+	width: 110px;
+	left: 100px;
+	background-color: #e74c3c;
+}
+.barra .start-blog, a:nth-child(3):hover~.animation {
+	width: 100px;
+	left: 210px;
+	background-color: #3498db;
+}
+.barra .start-portefolio, a:nth-child(4):hover~.animation {
+	width: 160px;
+	left: 310px;
+	background-color: #9b59b6;
+}
+.barra .start-contact, a:nth-child(5):hover~.animation {
+	width: 120px;
+	left: 470px;
+	background-color: #e67e22;
+}
+
+.barra_admin{
+
+    background-color: #273F57;
+    font-size: 16px;
+}
+
+.barra_admin a{
+    color:white;
+}
+
+h1 {
+	text-align: center;
+	margin: 40px 0 40px;
+	text-align: center;
+	font-size: 30px;
+	color: #ecf0f1;
+	text-shadow: 2px 2px 4px #000000;
+	font-family: 'Cherry Swash', cursive;
+}
+body {
+	font-size: 12px;
+	font-family: sans-serif;
+	background: #2c3e50;
+}
+
+.boton4 {
+  width: 90px;
+  height: 40px;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-align: center;
+  margin: 3px;
+  padding: 0.5em 1.2em;
+  background: #318aac;
+  border: 2px solid;
+  border-color: #318aac;
+}
+.boton4:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+  transition: all 0.2s ease;
+}
+
+.imagen{
+    width: 220px;
+    height: 200px;
+}
+
+.texto{
+    color: #2c3e50;
+    height: 22px;
+    font-size: 11px;
+}
+.texto2{
+    color: #2c3e50;
+    height: 20px;
+    font-size: 20px;
+}
+.texto3{
+    color: #2c3e50;
+    height: 15px;
+    font-size: 14px;
+}
+.texto_editar{
+    color: #FFFFFF;
+    height: 20px;
+    font-size: 20px;
+    text-align: left;
+    width: 100px;
+}
+
+.campo{
+    width: 300px;
+    color: #2c3e50;
+    height: 20px;
+    font-size: 16px;
+}
+
+.editar_precio{
+    display: none;
+    color: #2c3e50;
+    height: 20px;
+    font-size: 20px;
+    align: center;
+    width: 100px;
+}
+
+.fail{
+    color: red;
+    font-size: 12px;
+}
